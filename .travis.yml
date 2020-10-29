@@ -3,8 +3,11 @@ node_js:
   - "10.4"
 
 install:
+
   - cd /home/travis/build/ilovecatherine/msa-recap-ffmpeg-container
-  - echo "helloworld"
+  - sudo apt-get install azure-cli
+  - az login -u $USERNAME -p $PASSWORD
+  - sudo apt-get install azure-functions-core-tools-3
 
 
 deploy:
