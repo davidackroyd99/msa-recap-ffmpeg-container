@@ -19,7 +19,7 @@ install:
   - sudo apt-get install azure-functions-core-tools-3
   - docker build --tag msaunby/azurepyfunctionsimage:v1.0.0 .
   - az acr login --name recordings.azurecr.io
-  - docker push recordings.azurecr.io/assignment/azurepyfunctionsimage:v1.0.0
+  - docker push recordings.azurecr.io/msaunby/azurepyfunctionsimage:v1.0.0
 
 deploy:
   local_dir: dist
