@@ -20,6 +20,18 @@ install:
   - docker build --tag recordings.azurecr.io/msaunby/azurepyfunctionsimage:v1.0.0 .
   - az acr login --name recordings.azurecr.io
   - docker push recordings.azurecr.io/msaunby/azurepyfunctionsimage:v1.0.0
+  - ARC_NAME=recordings.azurecr.io
+  - RES_GROUP=recordings-rg
+  - ACR_LOGIN_SERVER=$(az acr show --name $ACR_NAME --resource-group $RES_GROUP --query "loginServer" --output tsv)
+  - az container create \
+    --name azurepyfunctionsimage \
+    --resource-group $RES_GROUP \
+    --image $ACR_LOGIN_SERVER/msaunby/azurepyfunctionsimage:v1.0.0 \
+    --registry-login-server $ACR_LOGIN_SERVER \
+    --registry-username recordings \
+    --registry-password $azregistrypassword \
+    --dns-name-label aci-demo-$RANDOM \
+    --query ipAddress.fqdn
 
 deploy:
   local_dir: dist
