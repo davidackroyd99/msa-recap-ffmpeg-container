@@ -23,6 +23,7 @@ install:
   - ARC_NAME=recordings
   - RESGROUP=recordings-rg
   - ACR_LOGIN_SERVER=recordings.azurecr.io
+  - echo $RESGROUP
   - az container create \
     --name azurepyfunctionsimage \
     --resource-group $RESGROUP \
