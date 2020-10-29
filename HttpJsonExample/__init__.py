@@ -3,8 +3,7 @@ import logging
 import azure.functions as func
 
 
-def main(req: func.HttpRequest) -> func.HttpResponse:
-    logging.info('Python HTTP trigger function processed a request.')
-
-    payload = req.get_json()
-    return func.HttpResponse(f"Received JSON payload {payload}",status_code=200)
+def main(myblob: func.InputStream):
+    logging.info(f"Python blob trigger function processed blob \n"
+                 f"Name: {myblob.name}\n"
+                 f"Blob Size: {myblob.length} bytes")

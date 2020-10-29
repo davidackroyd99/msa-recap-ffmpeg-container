@@ -2,6 +2,7 @@
   "scriptFile": "__init__.py",
   "bindings": [ 
     {
+      "authLevel": "anonymous",
       "type": "httpTrigger",
       "direction": "in",
       "name": "req"
@@ -12,6 +13,7 @@
       "name": "$return"
     },
     {
+      "authLevel": "anonymous",
       "name": "audioBlob",
       "type": "blob",
       "dataType": "binary",
@@ -20,6 +22,7 @@
       "direction": "in"
     },
     {
+      "authLevel": "anonymous",
       "name": "videoBlob",
       "type": "blob",
       "dataType": "binary",
@@ -28,6 +31,7 @@
       "direction": "in"
     },
     {
+      "authLevel": "anonymous",
       "name": "transcriptBlob",
       "type": "blob",
       "dataType": "binary",

@@ -1,15 +1,13 @@
 {
   "scriptFile": "__init__.py",
-  "bindings": [ 
+  "bindings": [
     {
-      "type": "httpTrigger",
+      "authLevel": "anonymous",
+      "name": "myblob",
+      "type": "blobTrigger",
       "direction": "in",
-      "name": "req"
-    },
-    {
-      "type": "http",
-      "direction": "out",
-      "name": "$return"
+      "path": "samples-workitems/{name}",
+      "connection": ""
     }
   ]
 }
