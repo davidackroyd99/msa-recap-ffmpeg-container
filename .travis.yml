@@ -7,8 +7,8 @@ before_install:
 
 install:
 
+  - curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
   - cd /home/travis/build/ilovecatherine/msa-recap-ffmpeg-container
-  - sudo apt-get install azure-cli
   - az login -u $USERNAME -p $PASSWORD
   - sudo apt-get install azure-functions-core-tools-3
 
