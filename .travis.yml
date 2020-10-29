@@ -17,7 +17,7 @@ install:
   - cd /home/travis/build/ilovecatherine/msa-recap-ffmpeg-container
   - az login -u $USERNAME -p $PASSWORD
   - sudo apt-get install azure-functions-core-tools-3
-  - docker build --tag recordings.azurecr.io/msaunby/azurepyfunctionsimage .
+  - docker build --tag recordings.azurecr.io/msaunby/azurepyfunctionsimage:v1.0.0 .
   - az acr login --name recordings.azurecr.io
   - docker push recordings.azurecr.io/msaunby/azurepyfunctionsimage:v1.0.0
 
