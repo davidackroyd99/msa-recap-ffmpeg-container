@@ -24,15 +24,7 @@ install:
   - RESGROUP=recordings-rg
   - ACR_LOGIN_SERVER=recordings.azurecr.io
   - echo $RESGROUP
-  - az container create \
-    --name azurepyfunctionsimage \
-    --resource-group $RESGROUP \
-    --image $ACR_LOGIN_SERVER/msaunby/azurepyfunctionsimage:v1.0.0 \
-    --registry-login-server $ACR_LOGIN_SERVER \
-    --registry-username recordings \
-    --registry-password $azregistrypassword \
-    --dns-name-label aci-demo-$RANDOM \
-    --query ipAddress.fqdn
+  - az container create --name azurepyfunctionsimage --resource-group $RESGROUP --image $ACR_LOGIN_SERVER/msaunby/azurepyfunctionsimage:v1.0.0 --registry-login-server $ACR_LOGIN_SERVER --registry-username recordings --registry-password $azregistrypassword --dns-name-label aci-demo-$RANDOM --query ipAddress.fqdn
 
 deploy:
   local_dir: dist
