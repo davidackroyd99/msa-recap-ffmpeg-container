@@ -7,6 +7,7 @@ before_install:
   - curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
   - wget -q https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb
   - sudo dpkg -i packages-microsoft-prod.deb
+  - sudo apt-get install docker-ce docker-ce-cli containerd.io
 
 install:
 
