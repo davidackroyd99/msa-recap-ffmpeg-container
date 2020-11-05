@@ -1,12 +1,13 @@
 {
   "scriptFile": "__init__.py",
-  "bindings": [ 
+  "bindings": [
     {
       "authLevel": "anonymous",
       "type": "httpTrigger",
       "direction": "in",
       "name": "req",
       "methods": [
+        "get",
         "post"
       ]
     },
@@ -16,18 +17,10 @@
       "name": "$return"
     },
     {
-      "name": "jsonBlob",
-      "type": "blob",
-      "dataType": "binary",
-      "path": "insights/{Insights.FileName}",
-      "connection": "MyStorageConnectionAppSetting",
-      "direction": "in"
-    },
-    {
       "name": "outputBlob",
       "type": "blob",
       "dataType": "binary",
-      "path": "recordings/{Transcript.FileName}",
+      "path": "recordings{insights}/{name}.{exten}",
       "connection": "MyStorageConnectionAppSetting",
       "direction": "out"
     }
