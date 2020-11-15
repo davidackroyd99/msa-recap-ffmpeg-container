@@ -15,6 +15,14 @@
       "type": "http",
       "direction": "out",
       "name": "$return"
+    },
+    {
+      "name": "outputBlob",
+      "type": "blob",
+      "dataType": "binary",
+      "path": "recordings{insights}/{name}.{exten}",
+      "connection": "MyStorageConnectionAppSetting",
+      "direction": "out"
     }
   ]
 }
